@@ -15,6 +15,7 @@ def index_image_colors(image_path, num_colors=4):
 
     indexed_data = np.array([palette[label] for label in labels])
     indexed_image = Image.fromarray(indexed_data.reshape(data.shape), 'RGB')
+
     return indexed_image, palette, labels.reshape(data.shape[:-1])
 
 
@@ -34,15 +35,17 @@ def recolor_image_gzhel(labels, gzhel_palette):
 
 
 gzhel_palette = [
-    (255, 255, 255),  # Белый
-    (65, 105, 225),      # Синий
-    (0, 71, 171),  # Кобальтовый
-    (0, 0, 128),  # Темной-синий
+    (248, 250, 252),  # Белый
+    (150, 172, 217),   # Голубой
+    (67, 94, 170),     # Синий
+    (56, 70, 126),      # Темной-синий
 ]
 
 
 image_path = 'kotenok.png'
 indexed_image, original_palette, labels = index_image_colors(image_path)
+
+indexed_image.save('indexed_image.png')
 
 gzhel_permutations = generate_color_permutations(gzhel_palette)
 
