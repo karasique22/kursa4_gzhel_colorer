@@ -1,3 +1,5 @@
+.venv/
+
 /recolored_image_gzhel_0.png
 /recolored_image_gzhel_1.png
 /recolored_image_gzhel_10.png
@@ -24,4 +26,3 @@
 /recolored_image_gzhel_9.png
 
 /indexed_image.png
-/отчет.txt
